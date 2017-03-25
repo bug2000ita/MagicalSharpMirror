@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="MagicalSharpMirror.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MagicalSharpMirror"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="600" Width="1024">
+
+    <Grid Margin="0" Height="600" VerticalAlignment="Top" Width="1024" CornerRadius="20" Background="#FF1AB7DA" >
+        <Grid.ColumnDefinitions>            
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="300*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>            
+        </Grid.RowDefinitions>
+
+        <Grid Background="Black" Grid.Column="0">
+            <TextBlock>Test </TextBlock>
+        </Grid>
+        <Grid Background="Black" Grid.Column="1">
+            <TextBlock>
+            <Run Text="" Foreground="Red" FontSize="30"/>    
+            </TextBlock>
+        </Grid>
+        <Grid Background="Black" Grid.Column="2">
+        <TextBlock HorizontalAlignment="Right">
+            <Run x:Name="Time" Text="00:00" Foreground="Red" FontSize="30" />
+        </TextBlock>
+        </Grid>
+    </Grid>
+</Page>
