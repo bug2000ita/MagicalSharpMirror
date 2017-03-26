@@ -14,31 +14,32 @@ namespace MagicalSharpMirror.ViewModels
     public class WeatherViewModel: BindableBase
     {
         private Weather weather;
-        private string time;
         private DataTimeRetriever data;
 
         public WeatherViewModel()
         {
-            this.SetMidNightTimeCommand = new DelegateCommand<object>(this.OnSetMidNightTime);
+            this.SetMidNightTimeCommand = new DelegateCommand<object>(this.OnSetMidNightTime);            
             this.weather = new Weather();
+            this.weather.PropertyChanged += (s, e) => { OnSetMidNightTime(s); };
+
             data = new DataTimeRetriever(this.weather);
         }
 
         public ICommand SetMidNightTimeCommand { get; private set; }
 
-        public string Time
+        public Weather Weather
         {
-            get { return weather.Time; }
+            get { return weather; }
             set
             {
-                weather.Time = value;
-                SetProperty(ref time, value);
+                weather = value;
+                SetProperty(ref weather, value);
             }
         }
 
         private void OnSetMidNightTime(object obj)
         {
-            Time = DateTime.Now.ToString();
+            Weather = obj as Weather;
         }
 
 

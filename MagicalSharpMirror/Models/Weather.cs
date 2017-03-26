@@ -14,7 +14,7 @@ namespace MagicalSharpMirror.Models
 
         public Weather()
         {
-            time = "Constructor Time " + DateTime.Now.ToString();
+            time = DateTime.Now.ToString();
         }
 
 
@@ -30,7 +30,6 @@ namespace MagicalSharpMirror.Models
                 if (value != time)
                 {
                     time = value;
-
                     NotifyPropertyChanged("Time");
                 }
             }
@@ -41,11 +40,7 @@ namespace MagicalSharpMirror.Models
 
         private void NotifyPropertyChanged(String propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (null != handler)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

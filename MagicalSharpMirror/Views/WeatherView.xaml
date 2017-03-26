@@ -12,7 +12,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="300" Height="200" >
          
         <TextBlock Name="Time" 
-                   Text="{Binding Time, TargetNullValue=InitValue, Mode=TwoWay}"
+                   Text="{Binding Weather.Time, TargetNullValue=InitValue, Mode=TwoWay}"
                    AutomationProperties.AutomationId="TimeText"
                    FontSize="20" 
                    FontWeight="Bold" 
