@@ -5,7 +5,10 @@
     xmlns:local="using:MagicalSharpMirror"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Height="600" Width="1024">
+    xmlns:views="using:MagicalSharpMirror"
+    mc:Ignorable="d" Height="600" Width="1024"
+    DataContext="{Binding Source={StaticResource Locator}, Path=MainViewModel}"
+>
 
     <Grid Margin="0" Height="600" VerticalAlignment="Top" Width="1024" CornerRadius="20" Background="#FF1AB7DA" >
         <Grid.ColumnDefinitions>            
@@ -14,21 +17,38 @@
             <ColumnDefinition Width="300*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>            
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
+        
 
         <Grid Background="Black" Grid.Column="0">
             <TextBlock>Test </TextBlock>
+
         </Grid>
         <Grid Background="Black" Grid.Column="1">
             <TextBlock>
-            <Run Text="" Foreground="Red" FontSize="30"/>    
+            <Run Text="" Foreground="Red" FontSize="30"/>
             </TextBlock>
         </Grid>
-        <Grid Background="Black" Grid.Column="2">
+
+        <Grid Background="Black" Grid.Column="2">                
         <TextBlock HorizontalAlignment="Right">
             <Run x:Name="Time" Text="00:00" Foreground="Red" FontSize="30" />
         </TextBlock>
         </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <!--<views:WeatherView DataContext="{Binding WeatherViewModel}" Height="246" VerticalAlignment="Top">
+            </views:WeatherView>-->
+            <views:WeatherView  Height="200" VerticalAlignment="Top">
+            </views:WeatherView>
+        </Grid>
+       
+
     </Grid>
+
+
+        
 </Page>

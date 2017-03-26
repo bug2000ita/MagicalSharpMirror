@@ -5,4 +5,10 @@
     xmlns:local="using:MagicalSharpMirror"
     RequestedTheme="Light">
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:MagicalSharpMirror.ViewModels" />
+        </ResourceDictionary>
+    </Application.Resources>
+
 </Application>
